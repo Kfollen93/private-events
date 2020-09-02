@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
         if @user.save
             flash[:notice] = "You signed up successfully"
+            session[:user_id] = @user.id
             redirect_to users_show_path
         else
             flash[:notice] = "Form is invalid"
