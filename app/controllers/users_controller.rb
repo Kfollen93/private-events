@@ -19,7 +19,6 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect_to @user
         else
-            flash[:notice] = "Form is invalid"
             render :new
         end
     end
