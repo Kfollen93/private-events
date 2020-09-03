@@ -15,7 +15,7 @@
       <p class="SignInForm">
         <%= simple_form_for :session, url: sessions_path do |f| %>
           <%= f.input :username, required: true %>
-          <%= f.button :submit %>
+          <%= f.button :submit, "Sign In" %>
         <% end %>
         <br>
       </p>

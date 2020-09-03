@@ -10,6 +10,37 @@
   </head>
 
   <body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <div class="navbar-item">
+        <pre class="tab"><strong><%= link_to "Home", root_path %> / <%= link_to "DoesntWork", root_path %></pre>
+      </div>
+    </div>
+
+    <div class="navbar-start">
+      <div class="navbar-item">
+      <% if !user_signed_in? %>
+          <pre class="tab"><strong><%= link_to "Sign In", new_session_path %> / <%= link_to "Sign Up", new_user_path %> </strong></pre>
+      <% else %>
+           <%= link_to("Sign Out", logout_path, method: :delete) %>
+      <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
   <div class="container">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
@@ -17,3 +48,8 @@
     <%= yield %>
   </body>
 </html>
+
+
+
+
+
