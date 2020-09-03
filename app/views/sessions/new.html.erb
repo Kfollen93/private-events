@@ -13,7 +13,7 @@
         Sign In
       </h1>
       <p class="SignInForm">
-        <%= simple_form_for @user do |f| %>
+        <%= simple_form_for :session, url: sessions_path do |f| %>
           <%= f.input :username, required: true %>
           <%= f.button :submit %>
         <% end %>
@@ -25,11 +25,3 @@
   </section>
   </body>
 </html>
-
-<% if @user.errors.any? %>
-    <ul class="SignUp_Errors">
-    <% for message_error in @user.errors.full_messages %>
-      <li> <%= message_error %></li>
-    <% end %>
-    </ul>
-<% end %>
