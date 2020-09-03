@@ -1,5 +1,5 @@
     class ApplicationController < ActionController::Base
-        #before_action :user_signed_in?
+        before_action :user_signed_in?
     def logged_in?
         deny_access unless user_signed_in?
     end
