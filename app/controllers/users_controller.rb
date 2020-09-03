@@ -13,7 +13,7 @@ class UsersController < ApplicationController
         if @user.save
             flash[:notice] = "You signed up successfully"
             session[:user_id] = @user.id
-            redirect_to users_show_path
+            redirect_to @user
         else
             flash[:notice] = "Form is invalid"
             render :new
