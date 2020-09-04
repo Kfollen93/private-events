@@ -23,6 +23,11 @@ class UsersController < ApplicationController
         end
     end
 
+    def events
+        @user = User.find(params[:id])
+        @events = @user.events
+    end
+
     def show
     end
 
