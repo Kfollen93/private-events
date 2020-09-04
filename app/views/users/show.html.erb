@@ -18,7 +18,15 @@
       You are currently signed in as:
         <%= current_user.username %> <br>
         The events you have created are:<br>
-        (something goes here)
+      <br>
+        <% @users.each do |user| %>
+          <% user.created_events.each do |event| %>
+            <%= event.title %><br>
+            <%= event.body %><br>
+            <%= event.date %><br>
+          <% end %>
+        <% end %>
+
         <% else %>
         You are not logged in. Please create an account, or sign in. <br>
       <% end %>

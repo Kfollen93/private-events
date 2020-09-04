@@ -8,7 +8,7 @@ class EventsController < ApplicationController
     end
 
     def create
-        @event = current_user.events.build(event_params)
+        @event = current_user.created_events.build(event_params)
 
         if @event.save
             flash[:notice] = "Event was successfully created."
@@ -25,6 +25,6 @@ class EventsController < ApplicationController
     private
 
     def event_params
-        params.require(:event).permit(:title)
+        params.require(:event).permit(:title, :body, :date)
     end
 end
