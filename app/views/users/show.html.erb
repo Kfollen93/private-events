@@ -11,7 +11,9 @@
   <section class="section">
     <div class="container">
       <h1 class="title">
-         <%= current_user.username %>'s Homepage
+         <% if user_signed_in? %>
+          <%= current_user.username %>'s Homepage
+         <% end %>
       </h1>
       <p class="userpage">
       <% if user_signed_in? %>
