@@ -1,11 +1,11 @@
     class ApplicationController < ActionController::Base
-        before_action :user_signed_in?
+
     def logged_in?
         deny_access unless user_signed_in?
     end
 
     def deny_access
-        redirect_to root_path, :notice => "Please sign in first."
+        redirect_to root_path, :notice => "Please sign in or sign up first."
     end
 
     def user_signed_in?
