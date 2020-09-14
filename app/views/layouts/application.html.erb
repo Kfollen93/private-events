@@ -24,7 +24,7 @@
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
       <div class="navbar-item">
-          <pre class="tab"><strong><%= link_to "Home", root_path %> / <%= link_to "Create Event", new_event_path %> / <%= link_to "Show Event", event_path(current_user) %> / <%= link_to "Events Index", events_path %> <% if user_signed_in? %>/ <%= link_to "My Page", current_user %><%end%></pre>
+          <pre class="tab"><strong><%= link_to "Home", root_path %> / <%= link_to "Create Event", new_event_path %> / <%= link_to "Events Index", events_path %> <% if user_signed_in? %> / <%= link_to "My Page", current_user %><%end%></pre>
       </div>
     </div>
 
