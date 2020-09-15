@@ -30,6 +30,7 @@ class UsersController < ApplicationController
 
     def show
         @users = User.all
+        @user_attendings = User.find(params[:id])
     end
 
     private

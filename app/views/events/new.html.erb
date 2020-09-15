@@ -1,20 +1,17 @@
-  <body>
-  <section class="section">
-    <div class="container">
-      <h1 class="NewEvent">
-        New Event
-      </h1>
-      <p class="NewEvent">
-    <div class="container">
-        <%= simple_form_for @event do |f| %>
-        <%= f.input :title %>
-        <%= f.input :body %>
-        <%= f.input :date%>
-        <%= f.button :submit %>
-    <% end %>
-    <%= yield %>
-      </p>
-    </div>
-  </section>
-  </body>
-</html>
+<section class="section">
+  <div class="container">
+    <h1 class="NewEvent">
+      New Event
+    </h1>
+    <p class="NewEvent">
+  <div class="container">
+      <%= simple_form_for @event do |f| %>
+      <%= f.input :title %>
+      <%= f.input :body %>
+      <%= f.input :date%>
+      <%= f.button :submit %>
+  <% end %>
+  <%= yield %>
+    </p>
+  </div>
+</section>

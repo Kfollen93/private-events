@@ -1,22 +1,15 @@
-  <body>
-  <section class="section">
-    <div class="container">
-      <h1 class="title">
-        Sign Up
-      </h1>
-      <p class="SignUpForm">
-        <%= simple_form_for @user do |f| %>
-          <%= f.input :username, required: true %>
-          <%= f.button :submit %>
-        <% end %>
-        <br>
-      </p>
-        <%= link_to "Back", root_path %>
-    </div>
-  </section>
-  </body>
-</html>
-
-
-
-
+<section class="section">
+  <div class="container">
+    <h1 class="title">
+      Sign Up
+    </h1>
+    <p class="SignUpForm">
+      <%= simple_form_for @user do |f| %>
+        <%= f.input :username, required: true %>
+        <%= f.button :submit %>
+      <% end %>
+      <br>
+    </p>
+      <%= link_to "Back", root_path %>
+  </div>
+</section>

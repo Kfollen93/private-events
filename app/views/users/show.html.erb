@@ -1,31 +1,31 @@
-  <body>
-  <section class="section">
-    <div class="container">
-      <h1 class="title">
-         <% if user_signed_in? %>
-          <%= current_user.username %>'s Homepage
-         <% end %>
-      </h1>
-      <p class="userpage">
+<div class="container">
+  <h1 class="title">
       <% if user_signed_in? %>
-        The events you have created are:<br>
-      <br>
-        <% @users.each do |user| %>
-          <% user.created_events.each do |event| %>
-            <%= event.title %><br>
-            <%= event.body %><br>
-            <%= event.date %><br>
-          <% end %>
-        <% end %>
-
-          <br>
-           <%= link_to "Creator of Event", event_path %>
-
-        <% else %>
-        You are not logged in. Please create an account, or sign in. <br>
+      <%= current_user.username %>'s Homepage
       <% end %>
-      </p>
-    </div>
-  </section>
-  </body>
-</html>
+  </h1>
+  <p class="userpage">
+  <% if user_signed_in? %>
+    The events you have created are:<br>
+  <br>
+    <% @users.each do |user| %>
+      <% user.created_events.each do |event| %>
+        <%= event.title %><br>
+        <%= event.body %><br>
+        <%= event.date %><br>
+      <% end %>
+    <% end %>
+    <br>
+    The events you are attending:
+    <%= @user_attendings.attended_events.each do |attending|%>
+      <%= attending.title %>
+    <% end %>
+
+      <br>
+        <%= link_to "Creator of Event", event_path %>
+
+    <% else %>
+    You are not logged in. Please create an account, or sign in. <br>
+  <% end %>
+  </p>
+</div>
