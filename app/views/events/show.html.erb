@@ -8,8 +8,12 @@
     <%= @event.creator.username %>
     <br>
     Event attendees (@event.attendees.each):
-    <% @event.attendees.each do |attendee| %>
-      <%= attendee.name %>
+    <% if @event.attendees.size > 0 %>
+      <% @event.attendees.each do |attendee| %>
+        <%= attendee.name %>
+      <% end %>
+    <% else %>
+      This event does not have anyone attending.
     <% end %>
     </p>
   </div>

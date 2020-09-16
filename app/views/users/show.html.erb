@@ -6,6 +6,7 @@
   </h1>
   <p class="userpage">
   <% if user_signed_in? %>
+  
     The events you have created are:<br>
   <br>
     <% @users.each do |user| %>
@@ -16,14 +17,18 @@
       <% end %>
     <% end %>
     <br>
-    The events you are attending:
+    Events you have previously attended:
+
+    <br>
+    <br>
+
+    Upcoming events:
     <%= @user_attendings.attended_events.each do |attending|%>
       <%= attending.title %>
     <% end %>
-
+      <br>
       <br>
         <%= link_to "Creator of Event", event_path %>
-
     <% else %>
     You are not logged in. Please create an account, or sign in. <br>
   <% end %>
