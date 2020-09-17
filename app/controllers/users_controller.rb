@@ -1,14 +1,11 @@
 class UsersController < ApplicationController
-    
-    def welcome
-    end
-    
     def new
         @user = User.new
     end
 
     def index
-        current_user = User.find_by_id(session[:current_user_id])
+        # current_user = User.find_by_id(session[:current_user_id])
+        @users = User.all
     end
 
     def create
@@ -29,8 +26,9 @@ class UsersController < ApplicationController
     end
 
     def show
-        @users = User.all
-        @user_attendings = User.find(params[:id])
+        @user = User.find(params[:id])
+        # @users = User.all
+        # @user_attendings = User.find(params[:id])
     end
 
     private

@@ -1,36 +1,36 @@
-<div class="container">
-  <h1 class="title">
-      <% if user_signed_in? %>
-      <%= current_user.username %>'s Homepage
-      <% end %>
-  </h1>
-  <p class="userpage">
+
+<div class="mypage">
+  <%= current_user.username %>'s Profile
+</div>
+
+<p class="pt-5">
+<div class="tile is-ancestor">
+  <div class="tile is-parent">
+    <div class="tile is-child box">
+      <p class="title">Events You Created:</p>
+       <p class="userpage">
   <% if user_signed_in? %>
-  
-    The events you have created are:<br>
-  <br>
-    <% @users.each do |user| %>
-      <% user.created_events.each do |event| %>
+        <% @user.created_events.each do |event| %><br>
         <%= event.title %><br>
         <%= event.body %><br>
         <%= event.date %><br>
+        <% end %>
       <% end %>
+    </div>
+    <div class="tile is-child box">
+      <p class="title">Upcoming Events:</p>
+       <p class="userpage">
+   <% @user.upcoming_events.each do |event| %>
+      <%= event.title %>
     <% end %>
-    <br>
-    Events you have previously attended:
-
-    <br>
-    <br>
-
-    Upcoming events:
-    <%= @user_attendings.attended_events.each do |attending|%>
-      <%= attending.title %>
-    <% end %>
-      <br>
-      <br>
-        <%= link_to "Creator of Event", event_path %>
-    <% else %>
-    You are not logged in. Please create an account, or sign in. <br>
-  <% end %>
-  </p>
+    </div>
+        <div class="tile is-child box">
+      <p class="title">Previous Events You Attended:</p>
+       <p class="userpage">
+   <% @user.previous_events.each do |event| %>
+    <%= event.title %>
+          <% end %>
+    </div>
+  </div>
 </div>
+  </p>
