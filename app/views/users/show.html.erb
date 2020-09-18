@@ -1,36 +1,47 @@
-
-<div class="mypage">
+ <div class="mypage">
   <%= current_user.username %>'s Profile
 </div>
-
 <p class="pt-5">
 <div class="tile is-ancestor">
   <div class="tile is-parent">
     <div class="tile is-child box">
-      <p class="title">Events You Created:</p>
-       <p class="userpage">
-  <% if user_signed_in? %>
-        <% @user.created_events.each do |event| %><br>
-        <%= event.title %><br>
-        <%= event.body %><br>
-        <%= event.date %><br>
+      <p class="title">Events You Created</p>
+      <hr>
+      <p class="userpage">
+      <div class="centertext">
+        <% if user_signed_in? %>
+          <% @user.created_events.each do |event| %>
+          <hr>
+          Event: <%= event.title %><br>
+          Desc: <%= event.body %><br>
+          When: <%= event.date %><br>
         <% end %>
       <% end %>
+      </div>
     </div>
     <div class="tile is-child box">
-      <p class="title">Upcoming Events:</p>
-       <p class="userpage">
-   <% @user.upcoming_events.each do |event| %>
-      <%= event.title %>
-    <% end %>
+      <p class="title">Upcoming Events</p>
+      <hr>
+      <p class="userpage">
+      <div class="centertext">
+        <% @user.upcoming_events.each do |event| %>
+          Event: <%= event.title %><br>
+          Desc: <%= event.body %><br>
+          When: <%= event.date %><br>
+        <% end %>
+        </div>
     </div>
-        <div class="tile is-child box">
-      <p class="title">Previous Events You Attended:</p>
-       <p class="userpage">
-   <% @user.previous_events.each do |event| %>
-    <%= event.title %>
-          <% end %>
+    <div class="tile is-child box">
+      <p class="title">Previously Attended Events</p>
+      <hr>
+      <p class="userpage">
+      <div class="centertext">
+        <% @user.previous_events.each do |event| %>
+      <hr>
+          <%= event.title %>
+        <% end %>
+        </div>
     </div>
   </div>
 </div>
-  </p>
+</p>

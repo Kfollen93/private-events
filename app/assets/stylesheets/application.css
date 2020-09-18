@@ -27,11 +27,24 @@
  }
 
  .title{
-     font-size: 1.3rem;
+     font-size: 1.1rem;
  }
 
  .mypage{
+    font-size: 1.1rem;
      padding-top: 0.3rem;
      text-align: center;
      font-weight: bold;
+ }
+
+ .newevent{
+    font-size: 1.1rem;
+    padding-bottom: 0.3rem;
+    text-align: center;
+    font-weight: bold;
+ }
+
+
+ .centertext{
+     text-align: center;
  }

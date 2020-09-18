@@ -1,10 +1,16 @@
 <div class="container">
   <h1 class="title">
-      Events Index:
+    Events Index
   </h1>
   <p class="userpage">
-  <% @events.each do |event| %><br>
-    <%= event.title %><br>
-  <% end %>
+  <div class="centertext">
+  <div class="tile is-child box">
+    <p class="userpage">
+      <% @events.each do |event| %>
+      <hr> 
+        <%= event.title %><br>
+      <% end %>
+  </div>
+  </div>
   </p>
 </div>
