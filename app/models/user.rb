@@ -5,10 +5,10 @@ class User < ApplicationRecord
     has_many :attended_events, through: :attendings, source: :event
 
     def previous_events
-      self.attended_events.select { |event| event.date < DateTime.now }
+      self.attended_events.select { |event| event.date < Time.now }
     end
 
     def upcoming_events
-      self.attended_events.select { |event| event.date > DateTime.now }
+      self.attended_events.select { |event| event.date > Time.now }
     end
 end

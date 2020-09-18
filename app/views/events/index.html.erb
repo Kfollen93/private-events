@@ -8,7 +8,7 @@
     <p class="userpage">
       <% @events.each do |event| %>
       <hr> 
-        <%= event.title %><br>
+        <%= link_to "#{event.title}", event_path(event) %><br>
       <% end %>
   </div>
   </div>
