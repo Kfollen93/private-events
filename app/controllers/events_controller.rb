@@ -14,7 +14,7 @@ class EventsController < ApplicationController
 
     if @event.save
       flash[:notice] = "Event was successfully created."
-      redirect_to root_path
+      redirect_to events_path
     else
       render :new
     end
@@ -28,7 +28,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
 
     if @event.update(event_params)
-      redirect_to @event
+      redirect_to events_path
     else
       render :edit
     end
