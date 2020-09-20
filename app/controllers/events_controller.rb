@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :logged_in?, :only => :new
+  before_action :logged_in?, only: [:new, :index]
 
   def new
     @event = current_user.created_events.build
