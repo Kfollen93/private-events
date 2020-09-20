@@ -26,8 +26,10 @@
   </div>
 </section>
 
- <%= button_to 'Register', events_path(@event),
+<% unless @event.creator.username == current_user.username %>
+  <%= button_to 'Register', events_path(@event),
   method: :post, confirm: 'really?' %>
+<% end %>
 * Need to add a button to register user.
 * Then show that they're attending on refresh.
 
