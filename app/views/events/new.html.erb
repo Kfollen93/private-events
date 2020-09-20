@@ -4,6 +4,8 @@
       New Event
     </h1>
     <p class="NewEvent">
+    <div class="tile is-child box">
+    <p class="userpage">
   <div class="container">
       <%= simple_form_for @event do |f| %>
       <%= f.input :title %>
@@ -13,5 +15,7 @@
   <% end %>
   <%= yield %>
     </p>
+    </p>
+    </div>
   </div>
 </section>
