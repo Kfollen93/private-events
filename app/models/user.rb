@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :attendings
   has_many :attended_events, through: :attendings, source: :event
 
-  def previous_events
+  def past_events
     self.attended_events.select { |event| event.date < Time.now }
   end
 

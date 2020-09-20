@@ -4,11 +4,13 @@
       Creator of Event and Attendees:
     </h1>
     <p class="userpage">
-    Event creator username (@event.creator.username):
-    <%= @event.creator.username %>
+    Event Created By:
+    <%= @event.creator.username %><br>
+      Desc: <%= @event.body %><br>
+      When: <%= @event.date %><br>
     <br>
-    Event attendees (@event.attendees.each):
-    <% if @event.attendees.size > 0 %>
+    Event Attendees:
+    <% if @event.attendees.count > 0 %>
       <% @event.attendees.each do |attendee| %>
         <%= attendee.name %>
       <% end %>
@@ -24,5 +26,8 @@
   </div>
 </section>
 
+ <%= button_to 'Register', events_path(@event),
+  method: :post, confirm: 'really?' %>
 * Need to add a button to register user.
 * Then show that they're attending on refresh.
+

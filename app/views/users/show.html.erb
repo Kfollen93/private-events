@@ -41,7 +41,7 @@
       <hr>
       <p class="userpage">
       <div class="centertext">
-        <% @user.previous_events.each do |event| %>
+        <% @user.past_events.each do |event| %>
       <hr>
           <%= link_to "#{event.title}", event_path(event) %>
         <% end %>
