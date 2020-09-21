@@ -12,9 +12,9 @@
         <% if user_signed_in? %>
           <% @user.created_events.each do |event| %>
           <hr>
-          <%= link_to "#{event.title}", event_path(event) %><br>
+          <%= link_to event.title, event_path(event) %><br>
           Desc: <%= event.body %><br>
-          When: <%= event.date %><br>
+          When: <%= event.date.strftime("%m-%d-%Y %H:%M") %><br>
 
           <%= link_to 'Edit', edit_event_path(event)%>
           <%= link_to 'Delete', event_path(event),
@@ -30,9 +30,9 @@
       <p class="userpage">
       <div class="centertext">
         <% @user.upcoming_events.each do |event| %>
-          <%= link_to "#{event.title}", event_path(event) %><br>
+          <%= link_to event.title, event_path(event) %><br>
           Desc: <%= event.body %><br>
-          When: <%= event.date %><br>
+          When: <%= event.date.strftime("%m-%d-%Y %H:%M") %><br>
         <% end %>
         </div>
     </div>
@@ -43,7 +43,9 @@
       <div class="centertext">
         <% @user.past_events.each do |event| %>
       <hr>
-          <%= link_to "#{event.title}", event_path(event) %>
+          <%= link_to event.title, event_path(event) %><br>
+          Desc: <%= event.body %><br>
+          When: <%= event.date.strftime("%m-%d-%Y %H:%M") %><br>
         <% end %>
         </div>
     </div>

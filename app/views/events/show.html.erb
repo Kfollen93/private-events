@@ -7,7 +7,7 @@
     Event Created By:
     <%= @event.creator.username %><br>
       Desc: <%= @event.body %><br>
-      When: <%= @event.date %><br>
+      When: <%= @event.date.strftime("%m-%d-%Y %H:%M") %><br>
     <br>
     Event Attendees:
     <% if @event.attendees.count > 0 %>
@@ -32,4 +32,3 @@
 <% end %>
 * Need to add a button to register user.
 * Then show that they're attending on refresh.
-
