@@ -13,5 +13,5 @@ class Event < ApplicationRecord
 
   scope :attended, -> { where(attended: true) }
   scope :past, -> { where("date <= ?", DateTime.now) }
-  scope :upcoming, -> { where("date > ?", DateTime.now)}
+  scope :upcoming, -> { where("date > ?", DateTime.now) }
 end
