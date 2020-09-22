@@ -4,11 +4,13 @@ class User < ApplicationRecord
   has_many :attendings
   has_many :attended_events, through: :attendings, source: :event
 
+  scope :attending, -> { where(attending: true) }
+
   def past_events
-    self.attended_events.select { |event| event.date < Time.now }
+    self.attended_events.select { |event| event.date < DateTime.now }
   end
 
   def upcoming_events
-    self.attended_events.select { |event| event.date > Time.now }
+    self.attended_events.select { |event| event.date > DateTime.now }
   end
 end

@@ -11,7 +11,6 @@ class Event < ApplicationRecord
     errors.add(:date, "Can not be set to the past.") if date < Time.now
   end
 
-  scope :attended, -> { where(attended: true) }
   scope :past, -> { where("date <= ?", DateTime.now) }
   scope :upcoming, -> { where("date > ?", DateTime.now) }
 end
