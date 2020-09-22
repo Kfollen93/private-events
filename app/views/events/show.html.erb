@@ -12,7 +12,7 @@
     Event Attendees:
     <% if @event.attendees.count > 0 %>
       <% @event.attendees.each do |attendee| %>
-        <%= attendee.name %>
+        <%= attendee.username %>
       <% end %>
     <% else %>
       This event does not have anyone attending.
@@ -30,3 +30,8 @@
 <% end %>
 * Need to add a button to register user.
 * Then show that they're attending on refresh.
+
+
+
+ <%= button_to 'Attend', attend_event_path(@event), method: :post, confirm: 'really?' %>
+ <%= @event.attendees.count %>
