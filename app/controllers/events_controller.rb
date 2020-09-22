@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all.order("created_at ASC")
+    @events = Event.all.order("created_at DESC")
   end
 
   def create
@@ -48,7 +48,11 @@ class EventsController < ApplicationController
   def attend
     @event = Event.find(params[:id])
     @event.attendees << current_user
-    @event.save
+
+    if @event.save
+      flash[:notice] = "You have successfully registered for an event."
+      redirect_to current_user
+    end
   end
 
   private

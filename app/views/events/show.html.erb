@@ -28,9 +28,6 @@
 <% unless @event.creator.username == current_user.username %>
 
 <% end %>
-* Need to add a button to register user.
-* Then show that they're attending on refresh.
-
 
 
  <%= button_to 'Attend', attend_event_path(@event), method: :post, confirm: 'really?' %>
