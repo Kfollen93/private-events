@@ -21,12 +21,18 @@
     </ul>
   </div>
   <% end %>
+  <div id="boxshadow">
     <%= f.input :title %>
     <%= f.input :body %>
-    <%= f.input :date%>
+    <%= f.input :date %>
+  </div>
+  <div style="padding:10px">
     <%= f.button :submit %>
+  </div>
   <% end %>
+
   <%= yield %>
   </p>
 </div>
 </section>
+

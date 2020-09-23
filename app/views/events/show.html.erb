@@ -11,19 +11,17 @@
       Desc: <%= @event.body %><br>
       When: <%= @event.date.strftime("%m-%d-%Y %H:%M") %><br>
     <br>
-    Event Attendees:
+    Event Attendees (<%= @event.attendees.count %>):
     <% if @event.attendees.count > 0 %>
-      <% @event.attendees.each do |attendee| %>
-        <%= attendee.username %>
-      <% end %>
+        <%= @event.attendees.map(&:username).join(", ") + "." %>
     <% else %>
       This event does not have anyone attending.
     <% end %>
-</div>
-</div>
+    </div>
+    </div>
+    <div style="padding:10px">
+      <%= button_to 'Attend', attend_event_path(@event), method: :post, confirm: 'really?' %>
+    </div>
     </p>
   </div>
 </section>
-
-  <%= button_to 'Attend', attend_event_path(@event), method: :post, confirm: 'really?' %>
-  <%= @event.attendees.count %>

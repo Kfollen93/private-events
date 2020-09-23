@@ -65,7 +65,13 @@ body {
 }
 
 #boxshadow {
-    -webkit-box-shadow: 5px 4px 5px 4px rgba(88, 83, 83, 0.75);
-    -moz-box-shadow: 5px 4px 5px 4px rgba(88, 83, 83, 0.75);
-    box-shadow: 5px 4px 5px 4px rgba(88, 83, 83, 0.75);
+    -webkit-box-shadow: 3px 2px 5px 2px rgba(88, 83, 83, 0.75);
+    -moz-box-shadow: 3px 2px 5px 2px rgba(88, 83, 83, 0.75);
+    box-shadow: 3px 2px 5px 2px rgba(88, 83, 83, 0.75);
+}
+
+#boxshadowusershow {
+    -webkit-box-shadow: 11px 2px 5px 2px rgba(88, 83, 83, 0.75);
+    -moz-box-shadow: 11px 2px 5px 2px rgba(88, 83, 83, 0.75);
+    box-shadow: 11px 2px 5px 2px rgba(88, 83, 83, 0.75);
 }

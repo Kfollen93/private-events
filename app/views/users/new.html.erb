@@ -3,13 +3,16 @@
     <h1 class="title">
       Sign Up
     </h1>
+    
     <p class="SignUpForm">
       <%= simple_form_for @user do |f| %>
+      <div id="boxshadow">
         <%= f.input :username, required: true %>
-        <%= f.button :submit %>
+        </div>
+        <div style="padding:10px">
+          <%= f.button :submit %>
+        </div>
       <% end %>
-      <br>
     </p>
-      <%= link_to "Back", root_path %>
   </div>
 </section>

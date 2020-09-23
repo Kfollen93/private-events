@@ -5,11 +5,14 @@
     </h1>
     <p class="SignInForm">
       <%= simple_form_for :session, url: sessions_path do |f| %>
+        <div id="boxshadow">
         <%= f.input :username, required: true %>
-        <%= f.button :submit, "Sign In" %>
+        </div>
+        <div style="padding:10px">
+          <%= f.button :submit, "Sign In" %>
+        </div>
       <% end %>
       <br>
     </p>
-      <%= link_to "Back", root_path %>
   </div>
 </section>
