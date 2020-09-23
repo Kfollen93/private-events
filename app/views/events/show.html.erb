@@ -4,6 +4,8 @@
       Creator of Event and Attendees:
     </h1>
     <p class="userpage">
+    <div id="boxshadow">
+    <div class="tile is-child box">
     Event Created By:
     <%= @event.creator.username %><br>
       Desc: <%= @event.body %><br>
@@ -17,16 +19,11 @@
     <% else %>
       This event does not have anyone attending.
     <% end %>
-    <div class="tile is-child box">
-    People attending this event:<br>
-    *ruby code here*
+</div>
 </div>
     </p>
   </div>
 </section>
 
-
-<% unless @event.creator.username %>
   <%= button_to 'Attend', attend_event_path(@event), method: :post, confirm: 'really?' %>
   <%= @event.attendees.count %>
-<% end %>
