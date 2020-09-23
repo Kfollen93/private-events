@@ -4,7 +4,9 @@
   Edit Event
 </h1>
 <p class="EditEvent">
+
 <div class="container">
+
   <%= simple_form_for @event do |f| %>
   <% if @event.errors.any? %>
   <div id="error_explanation">
@@ -15,7 +17,7 @@
     <ul>
       <% @event.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
-      <% end %>
+      <% end %> 
     </ul>
   </div>
   <% end %>
