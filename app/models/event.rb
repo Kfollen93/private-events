@@ -4,7 +4,7 @@ class Event < ApplicationRecord
   validate :future_event
 
   belongs_to :creator, class_name: "User"
-  has_many :attendings
+  has_many :attendings, dependent: :destroy
   has_many :attendees, through: :attendings, source: :user
 
   def future_event
