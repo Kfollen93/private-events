@@ -5,20 +5,14 @@
     </h1>
     <p class="NewEvent">
     <div id="boxshadow">
-    <div class="tile is-child box">
     <p class="userpage">
-  <div class="container">
       <%= simple_form_for @event do |f| %>
       <%= f.input :title %>
       <%= f.input :body %>
       <%= f.input :date %>
-  </div>
-  </div>
-  </div>
-  </div>
+    </div>
   <div style="padding:10px">
     <%= f.button :submit %>
-  </div>
   <% end %>
   <%= yield %>
     </p>

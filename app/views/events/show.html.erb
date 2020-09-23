@@ -20,7 +20,9 @@
     </div>
     </div>
     <div style="padding:10px">
-      <%= button_to 'Attend', attend_event_path(@event), method: :post, confirm: 'really?' %>
+      <% unless @event.creator.username == current_user.username %>
+        <%= button_to 'Attend', attend_event_path(@event), method: :post %>
+      <% end %>
     </div>
     </p>
   </div>
