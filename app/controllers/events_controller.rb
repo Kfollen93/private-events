@@ -55,6 +55,16 @@ class EventsController < ApplicationController
     end
   end
 
+  def unattend
+    @event = Event.find(params[:id])
+    @event.attendees.delete(current_user)
+
+    if @event
+      flash[:notice] = "You have successfully removed your attendance from an event."
+      redirect_to current_user
+    end
+  end
+
   private
 
   def event_params

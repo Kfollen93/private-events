@@ -1,13 +1,14 @@
 <section class="section">
   <div class="container">
     <h1 class="title">
-      Creator of Event and Attendees:
+      Event and Attendees
     </h1>
     <p class="userpage">
     <div id="boxshadow">
     <div class="tile is-child box">
     Event Created By:
     <%= @event.creator.username %><br>
+      Title: <%= @event.title %><br>
       Desc: <%= @event.body %><br>
       When: <%= @event.date.strftime("%m-%d-%Y %H:%M") %><br>
     <br>
