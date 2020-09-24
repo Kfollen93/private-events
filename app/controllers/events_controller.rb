@@ -60,7 +60,7 @@ class EventsController < ApplicationController
     @event.attendees.delete(current_user)
 
     if @event
-      flash[:notice] = "You have successfully removed your attendance from an event."
+      flash[:notice] = "You have successfully unregistered from an event."
       redirect_to current_user
     end
   end
