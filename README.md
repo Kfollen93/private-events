@@ -18,4 +18,4 @@ Styling was not the main focus of the project, but I decided to add a bit of scs
 - <a href="https://rubygems.org/gems/htmlbeautifier">htmlbeautifier</a>
 
 ### Homepage
-<img src="app/assets/images/Readme/title.png" width="550" />
+<img src="app/assets/images/title.png" width="550"/>
