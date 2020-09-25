@@ -4,9 +4,7 @@
   Edit Event
 </h1>
 <p class="EditEvent">
-
 <div class="container">
-
   <%= simple_form_for @event do |f| %>
   <% if @event.errors.any? %>
   <div id="error_explanation">
@@ -30,9 +28,7 @@
     <%= f.button :submit %>
   </div>
   <% end %>
-
   <%= yield %>
   </p>
 </div>
 </section>
-
