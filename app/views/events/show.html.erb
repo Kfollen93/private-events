@@ -10,7 +10,7 @@
     <%= @event.creator.username %><br>
       Title: <%= @event.title %><br>
       Desc: <%= @event.body %><br>
-      When: <%= @event.date.strftime("%m-%d-%Y %H:%M") %><br>
+      When: <%= @event.date.strftime("%b %d, %Y %H:%M") %><br>
     <br>
     Event Attendees (<%= @event.attendees.count %>):
     <% if @event.attendees.count > 0 %>

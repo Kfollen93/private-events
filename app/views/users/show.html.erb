@@ -14,7 +14,7 @@
           <hr>
           <%= link_to event.title, event_path(event) %><br>
           Desc: <%= event.body %><br>
-          When: <%= event.date.strftime("%m-%d-%Y %H:%M") %><br>
+          When: <%= event.date.strftime("%b %d, %Y %H:%M") %><br>
 
           <%= link_to 'Edit', edit_event_path(event)%>
           <%= link_to 'Delete', event_path(event),
@@ -34,7 +34,7 @@
         <hr>
           <%= link_to event.title, event_path(event) %><br>
           Desc: <%= event.body %><br>
-          When: <%= event.date.strftime("%m-%d-%Y %H:%M") %><br>
+          When: <%= event.date.strftime("%b %d, %Y %H:%M") %><br>
 
           <%= link_to 'Remove Attendance', unattend_event_path(event),
               method: :delete,
@@ -52,7 +52,7 @@
       <hr>
           <%= link_to event.title, event_path(event) %><br>
           Desc: <%= event.body %><br>
-          When: <%= event.date.strftime("%m-%d-%Y %H:%M") %><br>
+          When: <%= event.date.strftime("%b %d, %Y %H:%M") %><br>
         <hr> 
         <% end %>
         </div>
