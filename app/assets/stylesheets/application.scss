@@ -32,14 +32,14 @@
 
  .mypage{
     font-size: 1.1rem;
-     padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
      text-align: center;
      font-weight: bold;
  }
 
  .newevent{
     font-size: 1.1rem;
-    padding-bottom: 0.3rem;
+    padding-bottom: 0.9rem;
     text-align: center;
     font-weight: bold;
  }
@@ -71,8 +71,8 @@ html {
     box-shadow: 3px 2px 5px 2px rgba(88, 83, 83, 0.75);
 }
 
-#boxshadowusershow {
-    -webkit-box-shadow: 11px 2px 5px 2px rgba(88, 83, 83, 0.75);
-    -moz-box-shadow: 11px 2px 5px 2px rgba(88, 83, 83, 0.75);
-    box-shadow: 11px 2px 5px 2px rgba(88, 83, 83, 0.75);
+.tile.is-ancestor.usershow {
+    margin-left: 1.9rem;
+    margin-right: 1.9rem;
+    
 }
