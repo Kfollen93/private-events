@@ -6,7 +6,7 @@
     <p class="SignInForm">
       <%= simple_form_for :session, url: sessions_path do |f| %>
         <div id="boxshadow">
-        <%= f.input :username, required: true %>
+          <%= f.input :username, required: true %>
         </div>
         <div style="padding:10px">
           <%= f.button :submit, "Sign In" %>

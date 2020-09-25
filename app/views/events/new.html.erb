@@ -4,17 +4,17 @@
       New Event
     </h1>
     <p class="NewEvent">
-    <div id="boxshadow">
-    <p class="userpage">
-      <%= simple_form_for @event do |f| %>
-      <%= f.input :title %>
-      <%= f.input :body %>
-      <%= f.input :date %>
-    </div>
-  <div style="padding:10px">
-    <%= f.button :submit %>
-  <% end %>
-  <%= yield %>
-    </p>
-    </p>
+      <div id="boxshadow">
+        <p class="userpage">
+          <%= simple_form_for @event do |f| %>
+            <%= f.input :title %>
+            <%= f.input :body %>
+            <%= f.input :date %>
+          </div>
+          <div style="padding:10px">
+            <%= f.button :submit %>
+          <% end %>
+          <%= yield %>
+        </p>
+      </p>
 </section>

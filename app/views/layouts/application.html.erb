@@ -4,72 +4,62 @@
     <title>PrivateEvents</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-
-<nav class="navbar is-light" role="navigation" aria-label="main navigation">
- <div class="navbar-brand">
- 
-    <div class="navbar-item">
-      <%= link_to "Home", root_path %>
-    </div>
-
-<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <div class="navbar-item">
-      <%= link_to "Create Event", new_event_path %>
-    </div>
-
-      <div class="navbar-item">
-      <%= link_to "Events Index", events_path %>
-    </div>
-
-  <div class="navbar-item">
-    <% if user_signed_in? %>
-      <%= link_to "My Page", current_user %>
-    <%end%>
-  </div>
-
+    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <div class="navbar-item">
+          <%= link_to "Home", root_path %>
+        </div>
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
       </div>
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <div class="navbar-item">
+            <%= link_to "Create Event", new_event_path %>
+          </div>
+          <div class="navbar-item">
+            <%= link_to "Events Index", events_path %>
+          </div>
+          <div class="navbar-item">
+            <% if user_signed_in? %>
+              <%= link_to "My Page", current_user %>
+            <%end%>
+          </div>
+        </div>
       </div>
     </div>
-
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
           <% if !user_signed_in?%>
             <div class="button is-light">  <%= link_to "Sign In", new_session_path %> </div>
-            <div class="button is-warning">  <%= link_to "Sign Up", new_user_path %> </div> 
+            <div class="button is-warning">  <%= link_to "Sign Up", new_user_path %> </div>
           <% else %>
-          <div class="navbar-item">
-           <%= current_user.username %>
-          </div>
+            <div class="navbar-item">
+              <%= current_user.username %>
+            </div>
             <div class="button is-warning"> <%= link_to("Sign Out", logout_path, method: :delete) %> </div>
           <% end %>
-          </div>
         </div>
       </div>
     </div>
   </div>
-</nav>  
-
-<div class="container">
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>"><%= value %></div>
-    <% end %>
 </div>
-  <%= yield %>
-  </body>
+</nav>
+<div class="container">
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+</div>
+<%= yield %>
+</body>
 </html>

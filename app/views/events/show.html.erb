@@ -4,27 +4,27 @@
       Event and Attendees
     </h1>
     <p class="userpage">
-    <div id="boxshadow">
-    <div class="tile is-child box">
-    Event Created By:
-    <%= @event.creator.username %><br>
-      Title: <%= @event.title %><br>
-      Desc: <%= @event.body %><br>
-      When: <%= @event.date.strftime("%b %d, %Y %H:%M") %><br>
-    <br>
-    Event Attendees (<%= @event.attendees.count %>):
-    <% if @event.attendees.count > 0 %>
-        <%= @event.attendees.map(&:username).join(", ") + "." %>
-    <% else %>
-      This event does not have anyone attending.
-    <% end %>
-    </div>
-    </div>
-    <div style="padding:10px">
-      <% unless @event.creator.username == current_user.username || @event.attendees.include?(current_user) || @event.date < DateTime.now %>
-        <%= button_to 'Attend', attend_event_path(@event), method: :post %>
-      <% end %>
-    </div>
+      <div id="boxshadow">
+        <div class="tile is-child box">
+          Event Created By:
+          <%= @event.creator.username %><br>
+          Title: <%= @event.title %><br>
+          Desc: <%= @event.body %><br>
+          When: <%= @event.date.strftime("%b %d, %Y %H:%M") %><br>
+          <br>
+          Event Attendees (<%= @event.attendees.count %>):
+          <% if @event.attendees.count > 0 %>
+            <%= @event.attendees.map(&:username).join(", ") + "." %>
+          <% else %>
+            This event does not have anyone attending.
+          <% end %>
+        </div>
+      </div>
+      <div style="padding:10px">
+        <% unless @event.creator.username == current_user.username || @event.attendees.include?(current_user) || @event.date < DateTime.now %>
+          <%= button_to 'Attend', attend_event_path(@event), method: :post %>
+        <% end %>
+      </div>
     </p>
   </div>
 </section>
